@@ -4,10 +4,11 @@ const app = express();
 const port = 3000;
 
 
-app.use(express.static('src/client'))
+// app.use(express.static('src/client'))
+app.use(express.static('dist'))
 
 app.get("/", function (req, res) {
-	res.sendFile("/client/views/index.html", { root: __dirname + "/.." });
+	res.sendFile("dist/index.html", { root: __dirname + "/.." });
 });
 
 app.listen(port, () => {
