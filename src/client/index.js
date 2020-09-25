@@ -4,3 +4,7 @@ import './styles/main.scss'
 
 console.log("I Exist")
 console.log(testing);
+
+export {
+	testing
+}
