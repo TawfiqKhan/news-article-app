@@ -2,9 +2,12 @@ var path = require('path')
 const express = require("express");
 const bodyParser = require("body-parser");
 const fetch = require('node-fetch');
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
+app.use(cors());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('dist'))
 
@@ -23,13 +26,15 @@ const lang = "en"
 
 //working fetch but taking time to get the result
 
-app.post("/getAnalysis", (req, res)=> {
-	let content = req.body.content
+app.post("/api", (req, res)=> {
+	let content = req.body.text
 	console.log(content)
 	let url = `${baseUrl}${apiKey}&of=${resType}&lang=${lang}&txt=${content}`
-	fetch(url)
-	.then(res => res.json())
-    .then(json => res.send(json));
+	const result = fetch(url)
+	.then(response => response.json())
+    .then(datas => {
+    	res.send(datas)
+    });
 
 })
 

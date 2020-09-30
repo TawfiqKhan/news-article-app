@@ -11,12 +11,22 @@
 	</div>
 
 	<div>
-		<form action="/getAnalysis" method="POST">
-			<input type="text" name="text" placeholder="Write your text Here" />
+		<form onsubmit="Client.performAction(event)" id="form">
+			<input type="text" name="text" placeholder="Write your text Here" id="inputField" />
 			<input type="submit" value="Analyse Text" />
 
 		</form>
 	</div>
+
+	<segment>
+		<div id="result">
+			<p>No of Sentences <span id="nos"></span></p>
+			<p>Subjectivity <span id="subjectivity"></span></p>
+			<p>agreement <span id="agreement"></span></p>
+
+		</div>
+
+	</segment>
 
 </body>
 </html>

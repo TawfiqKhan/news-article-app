@@ -1,10 +1,10 @@
-import { testing } from './js/api'
+import { performAction } from './js/api'
 
 import './styles/main.scss'
 
 console.log("I Exist")
-console.log(testing);
+console.log(performAction);
 
 export {
-	testing
+	performAction
 }
