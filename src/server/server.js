@@ -28,8 +28,8 @@ const lang = "en"
 
 app.post("/api", (req, res)=> {
 	let content = req.body.text
-	console.log(content)
 	let url = `${baseUrl}${apiKey}&of=${resType}&lang=${lang}&txt=${content}`
+	console.log(url)
 	const result = fetch(url)
 	.then(response => response.json())
     .then(datas => {

@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>News Article App</title>
-	<link rel="stylesheet" href="/styles/main.scss">
-</head>
-<body>
-	<div>
-		<h2>This is news Article App</h2>
-		<button onclick="Client.testing()">Click Me</button>
-	</div>
+	<head>
+		<title>News Article App</title>
+		<link rel="stylesheet" href="/styles/main.scss" />
+	</head>
+	<body>
+		<div id="container">
+			<nav id="navigation">
+				<h1>Evaluate News Article with NLP</h1>
+			</nav>
 
-	<div>
-		<form onsubmit="Client.performAction(event)" id="form">
-			<input type="text" name="text" placeholder="Write your text Here" id="inputField" />
-			<input type="submit" value="Analyse Text" />
+			<segment id="input">
+				<h2>Write or paste the article you want to analyze</h2>
+				<form onsubmit="Client.performAction(event)" id="form">
+					<textarea
+						rows="10"
+						cols="80"
+						type="text"
+						name="text"
+						placeholder="Write your text Here"
+						id="inputField"
+					>
+					</textarea>
+					<!-- 					<input
+						type="text"
+						name="text"
+						placeholder="Write your text Here"
+						id="inputField"
+					/> -->
+					<input class="btn" type="submit" value="Analyse Text" />
+				</form>
+			</segment>
 
-		</form>
-	</div>
-
-	<segment>
-		<div id="result">
-			<p>No of Sentences <span id="nos"></span></p>
-			<p>Subjectivity <span id="subjectivity"></span></p>
-			<p>agreement <span id="agreement"></span></p>
-
+			<segment id="displayResult">
+				<div id="loadingAnimation"></div>
+				<div id="result" class="view">
+					<h2>Result of Analysis</h2>
+					<p>No of Sentences: <span id="nos"></span></p>
+					<p>Subjectivity: <span id="subjectivity"></span></p>
+					<p>Agreement: <span id="agreement"></span></p>
+				</div>
+			</segment>
+			<footer id="footer">
+				<div class="icon-container">
+					<a href="https://github.com/special3220"
+						><i class="icons fab fa-github"></i
+					></a>
+					<a href="https://www.linkedin.com/in/tawfiqulhasankhan/"
+						><i class="icons fab fa-linkedin"></i
+					></a>
+				</div>
+				<p class="credit">Created by, Md Tawfiqul Hasan Khan</p>
+			</footer>
 		</div>
-
-	</segment>
-
-</body>
+		      <script
+         src="https://kit.fontawesome.com/4cfb43502c.js"
+         crossorigin="anonymous"
+         ></script>
+	</body>
 </html>

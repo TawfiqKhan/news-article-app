@@ -1,13 +1,17 @@
 console.log("Connected");
 
+
+const resultField = document.querySelector("#result")
+const animation = document.querySelector("#loadingAnimation")
 function testing() {
 	alert("Clicked");
 }
 
 function performAction(event) {
+	resultField.classList.add('view')
 	event.preventDefault();
+	animation.classList.add('loader')
 	let text = document.querySelector("#inputField").value;
-	console.log(text);
 	fetch("/api", {
 		method: "POST",
 		mode: "cors",
@@ -18,7 +22,8 @@ function performAction(event) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		animation.classList.remove('loader')
+		resultField.classList.remove('view')
 		document.querySelector("#nos").innerHTML = data.sentence_list.length
 		document.querySelector("#subjectivity").innerHTML= data.subjectivity
 		document.querySelector("#agreement").innerHTML = data.agreement
