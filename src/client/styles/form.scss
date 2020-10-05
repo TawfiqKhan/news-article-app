@@ -1,0 +1,25 @@
+#input {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  grid-area: input;
+}
+
+#inputField {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  background-color: #b53426;
+  height: 30px;
+  color: #f7d5d0;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  &:hover {
+    color: #d6aca5;
+    cursor: pointer;
+  }
+}
