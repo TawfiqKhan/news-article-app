@@ -1,13 +1,6 @@
 $bgcolor: steelblue;
 $textcolor: black;
-$navfooterColor: #2e3b30;
-$defTextColor: #e6fae7;
 $headingColor: #659968;
-
-@mixin navfooter {
-	background-color: $navfooterColor;
-	color: $defTextColor;
-}
 
 body {
 	background-color: $bgcolor;
@@ -33,12 +26,6 @@ body {
 	margin: 0 auto;
 	flex-direction: column;
 	grid-area: input;
-}
-
-#navigation {
-	@include navfooter;
-	grid-area: nav;
-	font-size: 1.5rem;
 }
 
 .displayResult {
@@ -108,36 +95,3 @@ h2 {
 	}
 }
 
-/*Footer*/
-
-#footer {
-	@include navfooter;
-	grid-area: footer;
-	height: 50px;
-	font-weight: bold;
-	text-transform: uppercase;
-	padding-bottom: 30px;
-}
-
-.icon-container {
-	margin-top: 0;
-}
-
-.icons {
-	font-size: 1.2rem;
-	color: #fff;
-	margin: 5px 5px;
-	transition: font-size 0.3s;
-}
-
-.icons:hover {
-	font-size: 1.4rem;
-}
-
-.credit {
-	margin-top: 5px;
-	height: 20px;
-	padding-bottom: 20px;
-}
-
-/*Footer*/

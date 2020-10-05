@@ -1,6 +1,3 @@
-console.log("Connected");
-
-
 const resultField = document.querySelector("#result")
 const animation = document.querySelector("#loadingAnimation")
 function testing() {
@@ -8,17 +5,25 @@ function testing() {
 }
 
 function performAction(event) {
+	let text, url;
 	resultField.classList.add('view')
 	event.preventDefault();
 	animation.classList.add('loader')
-	let text = document.querySelector("#inputField").value;
+	text = document.querySelector("#inputField").value.trim();
+	if (!text) return;
+	if (Client.validateUrl(text)) {
+		url = text;
+		text = ''
+	}
+	console.log(text)
+	console.log(url)
 	fetch("/api", {
 		method: "POST",
 		mode: "cors",
 		headers: {
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({ text }),
+		body: JSON.stringify({ text, url }),
 	})
 	.then(res => res.json())
 	.then(data => {
